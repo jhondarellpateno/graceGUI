@@ -5,6 +5,9 @@
  */
 package main;
 
+import staff.Staffdashboard;
+import admin.Admindashboard;
+import config.UserSession;
 import config.config;
 import java.util.List;
 import java.util.Map;
@@ -249,11 +252,21 @@ public class login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Hello " + name + "!\nLOGIN SUCCESS!");
 
                 if (type.equals("Admin")) {
-                    Admindashboard addashFrame = new Admindashboard(name, email, type);
+                    UserSession.setU_id(Integer.parseInt(user.get("ID").toString()));
+                    UserSession.setU_name(user.get("username").toString());
+                    UserSession.setU_email(user.get("email").toString());
+                    UserSession.setU_type(user.get("type").toString());
+                    UserSession.setU_status(user.get("status").toString());
+                    Admindashboard addashFrame = new Admindashboard();
                     addashFrame.setVisible(true);
                     addashFrame.setLocationRelativeTo(null);
                 } else if (type.equals("Staff")) {
-                    Staffdashboard staffdash = new Staffdashboard(name, email, type);
+                    UserSession.setU_id(Integer.parseInt(user.get("ID").toString()));
+                    UserSession.setU_name(user.get("username").toString());
+                    UserSession.setU_email(user.get("email").toString());
+                    UserSession.setU_type(user.get("type").toString());
+                    UserSession.setU_status(user.get("status").toString());
+                    Staffdashboard staffdash = new Staffdashboard();
                     staffdash.setVisible(true);
                     staffdash.setLocationRelativeTo(null);
                 }
