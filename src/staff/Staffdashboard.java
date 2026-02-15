@@ -132,7 +132,7 @@ public class Staffdashboard extends javax.swing.JFrame {
         type.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         type.setForeground(new java.awt.Color(110, 198, 203));
         type.setText("TYPE");
-        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 40, -1));
+        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(110, 198, 203));
