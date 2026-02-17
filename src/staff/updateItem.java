@@ -313,7 +313,7 @@ public class updateItem extends javax.swing.JFrame {
 
         config conf = new config();
 
-        String sql = "UPDATE items SET i_name = ?, i_category = ?, i_brand = ?, o_quantity = ? WHERE o_id = ?";
+        String sql = "UPDATE items SET i_name = ?, i_category = ?, i_brand = ?, i_quantity = ? WHERE i_id = ?";
         conf.updateRecord(sql, name, cat, br, qty, id);
 
         int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to update item #" + id + "?", "Update_warning", JOptionPane.YES_NO_OPTION);
@@ -324,7 +324,6 @@ public class updateItem extends javax.swing.JFrame {
             jTextField4.setText("");
             jTextField5.setText("");
             jTextField3.setText("");
-            jSpinner1.setValue("");
 
             JOptionPane.showMessageDialog(null, "Item " + id + " has been updated in the database!");
         }

@@ -288,7 +288,7 @@ public class deleteItem extends javax.swing.JFrame {
 
             id.setText("");
 
-            JOptionPane.showMessageDialog(null, "Order deleted successfully!");
+            JOptionPane.showMessageDialog(null, "Item deleted successfully!");
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
