@@ -326,7 +326,7 @@ public class updateItem extends javax.swing.JFrame {
             jTextField3.setText("");
             jSpinner1.setValue("");
 
-            JOptionPane.showMessageDialog(null, "Order " + id + " has been updated in the database!");
+            JOptionPane.showMessageDialog(null, "Item " + id + " has been updated in the database!");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

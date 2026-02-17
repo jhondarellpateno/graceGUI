@@ -8,8 +8,6 @@ public class UserSession {
     private static String u_status;
     private static String u_type;
 
-    // REMOVE instance and getInstance()
-
     public static int getU_id() {
         return u_id;
     }

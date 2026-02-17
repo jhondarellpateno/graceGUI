@@ -225,6 +225,12 @@ public class deleteItem extends javax.swing.JFrame {
 
         jLabel1.setText("ENTER ID TO DELETE:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, -1, -1));
+
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
         jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 130, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -343,6 +349,10 @@ public class deleteItem extends javax.swing.JFrame {
         back.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
 
     /**
      * @param args the command line arguments

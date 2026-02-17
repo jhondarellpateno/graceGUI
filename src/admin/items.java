@@ -8,6 +8,7 @@ package admin;
 import config.UserSession;
 import config.config;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import main.login;
 
 /**
@@ -71,6 +72,9 @@ public class items extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jToggleButton3 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -191,6 +195,30 @@ public class items extends javax.swing.JFrame {
         });
         jPanel1.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, -1, 30));
 
+        jToggleButton1.setText("ADD");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 70, -1));
+
+        jToggleButton2.setText("DELETE");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
+
+        jToggleButton3.setText("UPDATE");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -267,6 +295,38 @@ public class items extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Select a row first!");
+            return;
+        }
+
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        String id = model.getValueAt(selectedRow, 0).toString();
+
+        config conf = new config();
+        String sql = "DELETE FROM items WHERE i_id = ?";
+        conf.deleteRecord(sql, id);
+
+        model.removeRow(selectedRow);
+
+        JOptionPane.showMessageDialog(null, "Deleted Successfully!");
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        updateItem update = new updateItem();
+        update.setLocationRelativeTo(null);
+        update.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -316,6 +376,9 @@ public class items extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JLabel type;
     private javax.swing.JLabel user;
