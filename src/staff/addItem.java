@@ -232,7 +232,7 @@ public class addItem extends javax.swing.JFrame {
         String qty = jSpinner1.getValue().toString();
 
         config conf = new config();
-        String sql = "INSERT INTO tbl_order (i_id, o_name, o_category, o_size, o_color, o_price, o_quantity) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO items (i_name, i_category, i_brand, i_quantity) VALUES (?, ?, ?, ?, ?)";
         conf.addRecord(sql, nam, cat, brand, qty);
 
         int choice = JOptionPane.showConfirmDialog(null, "Item Added Successfully! \nDo you want to add another item?", "Continue?", JOptionPane.YES_NO_OPTION);
