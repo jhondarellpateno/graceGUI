@@ -10,6 +10,7 @@ import config.config;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import main.login;
+import staff.addItem;
 
 /**
  *
@@ -296,7 +297,10 @@ public class items extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        addItem add = new addItem();
+        add.setLocationRelativeTo(null);
+        add.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
