@@ -212,8 +212,8 @@ public class register extends javax.swing.JFrame {
 
         }
 
-        String qry = "SELECT * FROM tbl_user WHERE u_email = ?";
-        java.util.List<java.util.Map<String, Object>> result = db.fetchRecords(qry, email);
+        String qry = "SELECT * FROM account WHERE email = ?";
+        java.util.List<java.util.Map<String, Object>> result = db.fetchRecords(qry, em);
 
         if (!result.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Email already exists. Please enter another email.");
