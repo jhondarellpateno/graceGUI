@@ -279,10 +279,6 @@ public class updateUser extends javax.swing.JFrame {
         String em = jTextField5.getText();
         config conf = new config();
 
-        if (id.isEmpty() || name.isEmpty() || ty.isEmpty() || stat.isEmpty() || em.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "All fields are required to fill in!");
-            return;
-        }
 
         String emailPattern = "^[A-Za-z0-9+_.-]+@(gmail\\.com|yahoo\\.com|outlook\\.com)$";
 
