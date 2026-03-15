@@ -39,12 +39,17 @@ public class viewItems extends javax.swing.JFrame {
     }
 
     void display() {
-        config con = new config();
-        String sql = "SELECT * FROM items";
-        con.displayData(sql, jTable1);
-    
+        config db = new config();
+        int currentUserID = UserSession.getU_id();
+        String role = UserSession.getU_type();
+
+        if (role.equalsIgnoreCase("Admin")) {
+            db.displayData("SELECT i_id, i_name, i_category, i_brand, i_quantity FROM items", jTable1);
+        } else {
+            String sql = "SELECT i_id, i_name, i_category, i_brand, i_quantity FROM items WHERE u_id = ?";
+            db.displayData(sql, jTable1, String.valueOf(currentUserID));
+        }
     }
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,20 +63,25 @@ public class viewItems extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         email = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         type = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jToggleButton4 = new javax.swing.JToggleButton();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,25 +94,20 @@ public class viewItems extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(110, 198, 203));
         jLabel2.setText("_________________________");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 20));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, -1, 20));
 
-        email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        email.setForeground(new java.awt.Color(110, 198, 203));
-        email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        email.setText("EMAIL");
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, -1));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Log Out");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 150, 20));
 
-        user.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        user.setForeground(new java.awt.Color(110, 198, 203));
-        user.setText("USER");
-        jPanel2.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 70, -1));
-
-        type.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        type.setForeground(new java.awt.Color(110, 198, 203));
-        type.setText("TYPE");
-        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(110, 198, 203));
         jLabel5.setText("Dashboard");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,22 +121,9 @@ public class viewItems extends javax.swing.JFrame {
                 jLabel5MouseExited(evt);
             }
         });
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 130, 30));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, 30));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(110, 198, 203));
-        jLabel9.setText("Add Item");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel9MouseEntered(evt);
-            }
-        });
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 130, 30));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(110, 198, 203));
         jLabel6.setText("View Item");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,19 +134,9 @@ public class viewItems extends javax.swing.JFrame {
                 jLabel6MouseEntered(evt);
             }
         });
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 130, 30));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 130, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(110, 198, 203));
-        jLabel8.setText("Update Item");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 130, 30));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(110, 198, 203));
         jLabel7.setText("Delete Item");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -162,24 +144,85 @@ public class viewItems extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 130, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 130, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(110, 198, 203));
-        jLabel3.setText("Log Out");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        email.setForeground(new java.awt.Color(110, 198, 203));
+        email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        email.setText("EMAIL");
+        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, -1));
+
+        user.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        user.setForeground(new java.awt.Color(110, 198, 203));
+        user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        user.setText("USER");
+        jPanel2.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, -1));
+
+        type.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        type.setForeground(new java.awt.Color(110, 198, 203));
+        type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        type.setText("TYPE");
+        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 150, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel8.setText("Update Item");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                jLabel8MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 130, 20));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 130, 30));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel9.setText("Add Item");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel9MouseEntered(evt);
+            }
+        });
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 130, 30));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel1.setText("Sell Item");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 130, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel11.setText("Profile");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 130, 30));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel12.setText("_________________________");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 20));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel13.setText("_________________________");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 500));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(48, 56, 47));
-        jLabel4.setText("VIEW ITEMS");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, 70));
+        jLabel4.setText("ITEMS");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -214,6 +257,11 @@ public class viewItems extends javax.swing.JFrame {
         });
         jPanel1.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, -1, 30));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(48, 56, 47));
+        jLabel10.setText("VIEW ITEMS");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, 70));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -247,13 +295,35 @@ public class viewItems extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyReleased
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        String findings = jTextField1.getText();
-
+        String findings = jTextField1.getText().trim();
         config con = new config();
+        String sql;
 
-        String sql = "SELECT i_id, i_name, i_category, i_brand FROM items WHERE i_name = '" + findings + "' OR i_category = '" + findings + "' OR i_id = '" + findings + "' OR i_brand = '" + findings + "'";
-        con.displayData(sql, jTable1);
+        int currentUserID = UserSession.getU_id();
+        String userType = UserSession.getU_type();
+
+        if (userType.equalsIgnoreCase("Admin")) {
+            sql = "SELECT i_id, i_name, i_category, i_brand, i_quantity FROM items WHERE "
+                    + "(i_name LIKE ? OR i_category LIKE ? OR i_id LIKE ? OR i_brand LIKE ?)";
+
+            String searchPattern = "%" + findings + "%";
+            con.displayData(sql, jTable1, searchPattern, searchPattern, searchPattern, searchPattern);
+
+        } else {
+            sql = "SELECT i_id, i_name, i_category, i_brand, i_quantity FROM items WHERE "
+                    + "u_id = ? AND (i_name LIKE ? OR i_category LIKE ? OR i_id LIKE ? OR i_brand LIKE ?)";
+
+            String searchPattern = "%" + findings + "%";
+            con.displayData(sql, jTable1, String.valueOf(currentUserID), searchPattern, searchPattern, searchPattern, searchPattern);
+        }
     }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        login back = new login();
+        back.setLocationRelativeTo(null);
+        back.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         Staffdashboard dash = new Staffdashboard();
@@ -270,17 +340,6 @@ public class viewItems extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel5MouseExited
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        addItem add = new addItem();
-        add.setLocationRelativeTo(null);
-        add.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel9MouseClicked
-
-    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
-
-    }//GEN-LAST:event_jLabel9MouseEntered
-
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         viewItems view = new viewItems();
         view.setLocationRelativeTo(null);
@@ -292,13 +351,6 @@ public class viewItems extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseEntered
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        updateItem update = new updateItem();
-        update.setLocationRelativeTo(null);
-        update.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
-
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         deleteItem delete = new deleteItem();
         delete.setLocationRelativeTo(null);
@@ -306,12 +358,37 @@ public class viewItems extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        login back = new login();
-        back.setLocationRelativeTo(null);
-        back.setVisible(true);
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        updateItem update = new updateItem();
+        update.setLocationRelativeTo(null);
+        update.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        addItem add = new addItem();
+        add.setLocationRelativeTo(null);
+        add.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
+
+    }//GEN-LAST:event_jLabel9MouseEntered
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        sellItem sell = new sellItem();
+        sell.setLocationRelativeTo(null);
+        sell.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        staffprofile profile = new staffprofile();
+        profile.setLocationRelativeTo(null);
+        profile.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -350,6 +427,11 @@ public class viewItems extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel email;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

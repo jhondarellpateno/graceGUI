@@ -61,12 +61,15 @@ public class Users extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         email = new javax.swing.JLabel();
         type = new javax.swing.JLabel();
-        user = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        user = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
@@ -98,14 +101,9 @@ public class Users extends javax.swing.JFrame {
         type.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         type.setForeground(new java.awt.Color(110, 198, 203));
         type.setText("TYPE");
-        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 80, -1));
+        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 40, -1));
 
-        user.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        user.setForeground(new java.awt.Color(110, 198, 203));
-        user.setText("USER");
-        jPanel2.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 70, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(110, 198, 203));
         jLabel6.setText("Dashboard");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -113,9 +111,9 @@ public class Users extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, 20));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 130, 30));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(110, 198, 203));
         jLabel5.setText("Users");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,9 +121,9 @@ public class Users extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 130, 20));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(110, 198, 203));
         jLabel8.setText("Profile");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,27 +131,54 @@ public class Users extends javax.swing.JFrame {
                 jLabel8MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 130, 20));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 30));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel7.setText("_________________________");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, 20));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(110, 198, 203));
-        jLabel9.setText("View Items");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 130, 20));
+        jLabel9.setText("_________________________");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Log Out");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 130, 20));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 150, 20));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel1.setText("Items");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 130, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel11.setText("Item Sold");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 130, 30));
+
+        user.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        user.setForeground(new java.awt.Color(110, 198, 203));
+        user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        user.setText("USER");
+        jPanel2.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 500));
 
@@ -169,7 +194,7 @@ public class Users extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, 270));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(48, 56, 47));
         jLabel10.setText("USERS");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 160, -1));
@@ -180,7 +205,7 @@ public class Users extends javax.swing.JFrame {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 80, -1));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 70, 60));
 
         jToggleButton2.setText("DELETE");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +213,7 @@ public class Users extends javax.swing.JFrame {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 80, -1));
+        jPanel1.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, 60));
 
         jToggleButton3.setText("UPDATE");
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +221,7 @@ public class Users extends javax.swing.JFrame {
                 jToggleButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 80, -1));
+        jPanel1.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, -1, 60));
 
         jToggleButton4.setText("SEARCH");
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -257,37 +282,73 @@ public class Users extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
- 
+
     }//GEN-LAST:event_jTextField1KeyReleased
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         int selectedRow = jTable1.getSelectedRow();
 
         if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Select a row first!");
+            JOptionPane.showMessageDialog(null, "Please select a user from the table to delete!");
             return;
         }
 
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
         String id = model.getValueAt(selectedRow, 0).toString();
+        String name = model.getValueAt(selectedRow, 1).toString();
 
-        config conf = new config();
-        String sql = "DELETE FROM account WHERE ID = ?";
-        conf.deleteRecord(sql, id);
+        int response = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete user: " + name + "?", "Confirm Deletion", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 
-        model.removeRow(selectedRow);
+        if (response == JOptionPane.YES_OPTION) {
+            config conf = new config();
+            String sql = "DELETE FROM account WHERE ID = ?";
 
-        JOptionPane.showMessageDialog(null, "Deleted Successfully!");
+            conf.deleteRecord(sql, id);
+
+            model.removeRow(selectedRow);
+
+            JOptionPane.showMessageDialog(null, "Account has been removed.");
+        } else {
+            System.out.println("Deletion cancelled.");
+        }
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        updateUser update = new updateUser();
-        update.setLocationRelativeTo(null);
-        update.setVisible(true);
-        this.dispose();
-        
+        int selectedRow = jTable1.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "No account selected! Please click a user from the table first.");
+            return;
+        }
+
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+            Object idValue = model.getValueAt(selectedRow, 0);
+
+            if (idValue == null || idValue.toString().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Error: Selected user has no valid ID.");
+                return;
+            }
+
+            String id = idValue.toString();
+
+            updateUser update = new updateUser(id + "");
+            update.setLocationRelativeTo(null);
+            update.setVisible(true);
+
+            this.dispose();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An unexpected error occurred: " + e.getMessage());
+        }
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        adduser register = new adduser();
+        register.setLocationRelativeTo(null);
+        register.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         Admindashboard dash = new Admindashboard();
@@ -303,12 +364,12 @@ public class Users extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        items item = new items();
-        item.setLocationRelativeTo(null);
-        item.setVisible(true);
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        adminProfile prof = new adminProfile();
+        prof.setLocationRelativeTo(null);
+        prof.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         login back = new login();
@@ -317,19 +378,19 @@ public class Users extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        profile prof = new profile();
-        prof.setLocationRelativeTo(null);
-        prof.setVisible(true);
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        itemSold sold = new itemSold();
+        sold.setLocationRelativeTo(null);
+        sold.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_jLabel11MouseClicked
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        adduser user = new adduser ();
-        user.setLocationRelativeTo(null);
-        user.setVisible(true);
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        items item = new items();
+        item.setLocationRelativeTo(null);
+        item.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -368,11 +429,14 @@ public class Users extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel email;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

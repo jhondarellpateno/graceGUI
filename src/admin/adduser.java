@@ -50,13 +50,16 @@ public class adduser extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         email = new javax.swing.JLabel();
-        user = new javax.swing.JLabel();
         type = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        user = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -89,17 +92,12 @@ public class adduser extends javax.swing.JFrame {
         email.setText("EMAIL");
         jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, -1));
 
-        user.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        user.setForeground(new java.awt.Color(110, 198, 203));
-        user.setText("USER");
-        jPanel2.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 70, -1));
-
         type.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         type.setForeground(new java.awt.Color(110, 198, 203));
         type.setText("TYPE");
-        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 80, -1));
+        jPanel2.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 40, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(110, 198, 203));
         jLabel6.setText("Dashboard");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,9 +105,9 @@ public class adduser extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 130, 20));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 130, 30));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(110, 198, 203));
         jLabel5.setText("Users");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -117,9 +115,9 @@ public class adduser extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 130, 20));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, 30));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(110, 198, 203));
         jLabel8.setText("Profile");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -127,27 +125,54 @@ public class adduser extends javax.swing.JFrame {
                 jLabel8MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 130, 20));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 30));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(110, 198, 203));
-        jLabel12.setText("View Items");
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 130, 20));
+        jLabel12.setText("_________________________");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, 20));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel13.setText("_________________________");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Log Out");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 130, 20));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 150, 20));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel14.setText("Items");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 130, 30));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(110, 198, 203));
+        jLabel15.setText("Item Sold");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 130, 30));
+
+        user.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        user.setForeground(new java.awt.Color(110, 198, 203));
+        user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        user.setText("USER");
+        jPanel2.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 150, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 500));
 
@@ -211,28 +236,21 @@ public class adduser extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         config db = new config();
 
-        String username = jTextField1.getText();
-        String em = jTextField2.getText();
-        String pass = jPasswordField1.getText();
-        String ty = jTextField3.getText();
-        String stat = jTextField4.getText();
+        String username = jTextField1.getText().trim();
+        String em = jTextField2.getText().trim();
+        String pass = new String(jPasswordField1.getPassword()); 
+        String ty = jTextField3.getText().trim();
+        String stat = jTextField4.getText().trim();
 
         if (username.isEmpty() || em.isEmpty() || pass.isEmpty() || ty.isEmpty() || stat.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "All fields are required to fill in!");
+            JOptionPane.showMessageDialog(null, "All fields are required!");
             return;
         }
 
         String emailPattern = "^[A-Za-z0-9+_.-]+@(gmail\\.com|yahoo\\.com|outlook\\.com)$";
-
         if (!em.matches(emailPattern)) {
-            JOptionPane.showMessageDialog(null, "Invalid Email!");
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jPasswordField1.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
-            return;
-
+            JOptionPane.showMessageDialog(null, "Invalid Email! Use Gmail, Yahoo, or Outlook.");
+            return; 
         }
 
         String qry = "SELECT * FROM account WHERE email = ?";
@@ -240,21 +258,25 @@ public class adduser extends javax.swing.JFrame {
 
         if (!result.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Email already exists. Please enter another email.");
-        } else {
+            return;
+        }
 
+        try {
             String hash = db.hashPassword(pass);
-            String sql = "INSERT INTO account ( username, email, pass, type, status) VALUES ( ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO account (username, email, pass, type, status) VALUES (?, ?, ?, ?, ?)";
 
             db.addRecord(sql, username, em, hash, ty, stat);
 
-            JOptionPane.showMessageDialog(null, "Registered!");
+            JOptionPane.showMessageDialog(null, "Account Successfully Registered!");
 
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jPasswordField1.setText("");
-            jTextField3.setText("");
-            jTextField4.setText("");
+            Admindashboard back = new Admindashboard();
+            back.setLocationRelativeTo(null);
+            back.setVisible(true);
 
+            this.dispose(); 
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Database Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -272,12 +294,12 @@ public class adduser extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        items item = new items();
-        item.setLocationRelativeTo(null);
-        item.setVisible(true);
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        adminProfile prof = new adminProfile();
+        prof.setLocationRelativeTo(null);
+        prof.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel12MouseClicked
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         login back = new login();
@@ -286,12 +308,19 @@ public class adduser extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        profile prof = new profile();
-        prof.setLocationRelativeTo(null);
-        prof.setVisible(true);
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        itemSold sold = new itemSold();
+        sold.setLocationRelativeTo(null);
+        sold.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        items item = new items();
+        item.setLocationRelativeTo(null);
+        item.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel14MouseClicked
 
     /**
      * @param args the command line arguments
@@ -334,6 +363,9 @@ public class adduser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
