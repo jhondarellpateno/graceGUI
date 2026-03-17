@@ -38,7 +38,7 @@ public class Staffdashboard extends javax.swing.JFrame {
     public void loadStaffDashboardStats() {
         config db = new config();
 
-        String itemsAdded = db.getSingleValue("SELECT COUNT(*) FROM tbl_transactions");
+        String itemsAdded = db.getSingleValue("SELECT COUNT(*) FROM items");
         jLabel17.setText(itemsAdded != null ? itemsAdded : "0");
 
         String itemsSold = db.getSingleValue("SELECT SUM(t_qty_sold) FROM tbl_transactions");
